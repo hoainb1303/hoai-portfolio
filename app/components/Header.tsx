@@ -1,12 +1,39 @@
+"use client";
 import React from "react";
-import NavBar from "./NavBar";
+import { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
+  const [menuToggle, setMenuToggle] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuToggle(!menuToggle);
+  };
+
   return (
-    <header className="header w-full outline-1">
-      <div className="header-container h-20 box-border max-w-[1200px] m-auto grid grid-cols-[1fr_2fr] items-center">
-        <div className="header-logo">LOGO</div>
-        <NavBar />
+    <header className="header">
+      <div className="header-container">
+        <div className="header-responsive">
+          <div className="header-logo">LOGO</div>
+          <div className="nav-hamburger" onClick={toggleMenu}></div>
+        </div>
+        <nav className={`navbar ${menuToggle ? "menu-open" : "menu-close"}`}>
+          <ScrollLink className="nav-item" to="home">
+            Home
+          </ScrollLink>
+          <ScrollLink className="nav-item" to="about">
+            About
+          </ScrollLink>
+          <ScrollLink className="nav-item" to="skill">
+            Skills
+          </ScrollLink>
+          <ScrollLink className="nav-item" to="projects">
+            Projects
+          </ScrollLink>
+          <ScrollLink className="nav-item" to="contact">
+            Contact
+          </ScrollLink>
+        </nav>
       </div>
     </header>
   );

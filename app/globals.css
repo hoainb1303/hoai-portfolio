@@ -25,12 +25,54 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Remember best style order
+Layout → Flex/Grid → Spacing → Sizing → Typography → Colors → Effects → Transitions, etc */
+
 @layer components {
+  .header {
+    @apply fixed w-full bg-gray-50;
+    @apply max-md:bg-transparent;
+  }
+
+  .header-container {
+    @apply box-border max-w-[1200px]
+    m-auto px-5 py-4;
+
+    @apply max-md:rounded-l-[100vw]
+    max-md:mt-8 max-md:ml-4
+    max-md:bg-white;
+
+    @apply md:grid grid-cols-[1fr_3fr] items-center lg:grid-cols-[1fr_2fr];
+  }
+
+  .header-responsive {
+    @apply flex justify-between;
+  }
+
+  .nav-hamburger {
+    @apply w-10 h-10 bg-black;
+    @apply md:hidden;
+  }
+
+  .menu-open {
+    @apply flex;
+  }
+
+  .menu-close {
+    @apply hidden;
+  }
+
+  .navbar {
+    @apply justify-between;
+    @apply sm:flex;
+  }
+
   .nav-item {
-    @apply text-red-500 cursor-pointer;
+    @apply mx-2 px-5 py-2 rounded-[100vw] text-gray-700 text-center font-bold border-gray-50 border-6 transition-[0.5s] ease-in cursor-pointer;
+    @apply lg:mx-4 lg:px-10;
   }
 
   .nav-item:hover {
-    @apply text-blue-500;
+    @apply border-white bg-linear-to-r from-[#26c5f3] to-[#b429f9]  text-white shadow-md;
   }
 }
