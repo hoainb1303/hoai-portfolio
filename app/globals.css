@@ -37,16 +37,17 @@ Layout → Flex/Grid → Spacing → Sizing → Typography → Colors → Effect
   .header-container {
     @apply box-border max-w-[1200px]
     m-auto px-5 py-4;
-
-    @apply max-md:rounded-l-[100vw]
-    max-md:mt-8 max-md:ml-4
-    max-md:bg-white;
+    @apply max-md:p-0;
 
     @apply md:grid grid-cols-[1fr_3fr] items-center lg:grid-cols-[1fr_2fr];
   }
 
   .header-responsive {
-    @apply flex justify-between;
+    @apply flex justify-between items-center
+    max-md:rounded-l-[100vw]
+    max-md:py-2
+    max-md:mt-8 max-md:ml-4
+    max-md:bg-white;
   }
 
   .nav-hamburger {
@@ -55,15 +56,15 @@ Layout → Flex/Grid → Spacing → Sizing → Typography → Colors → Effect
   }
 
   .menu-open {
-    @apply flex;
+    @apply flex max-md:max-h-20;
   }
 
   .menu-close {
-    @apply hidden;
+    @apply hidden max-md:max-h-0;
   }
 
   .navbar {
-    @apply justify-between;
+    @apply justify-between transition-[0.5s] ease-in;
     @apply sm:flex;
   }
 
