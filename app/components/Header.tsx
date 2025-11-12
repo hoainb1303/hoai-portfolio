@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import styles from "./Header.module.css";
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -11,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
+    <header className={styles.header}>
       <div className="header-container">
         <div className="header-responsive">
           <div className="header-logo">LOGO</div>

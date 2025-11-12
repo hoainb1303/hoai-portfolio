@@ -1,0 +1,11 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background: #f9fafb;
+}
+
+@media (width < 48rem /* 768px */) {
+  .header {
+    background: transparent;
+  }
+}
