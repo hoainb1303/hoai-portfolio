@@ -34,13 +34,12 @@ Layout → Flex/Grid → Spacing → Sizing → Typography → Colors → Effect
     @apply max-md:bg-transparent;
   } */
 
-  .header-container {
+  /* .header-container {
     @apply box-border max-w-[1200px]
     m-auto px-5 py-4;
     @apply max-md:p-0;
-
     @apply md:grid grid-cols-[1fr_3fr] items-center lg:grid-cols-[1fr_2fr];
-  }
+  } */
 
   .header-responsive {
     @apply flex justify-between items-center

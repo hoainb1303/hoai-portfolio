@@ -4,8 +4,33 @@
   background: #f9fafb;
 }
 
+.header-container {
+  box-sizing: border-boxed;
+  margin: auto;
+  padding: 1.25rem 2rem;
+
+  max-width: 1200px;
+}
+
 @media (width < 48rem /* 768px */) {
   .header {
     background: transparent;
+  }
+
+  .header-container {
+    padding: 0;
+  }
+}
+
+@media (width >= 48rem /* 768px */) {
+  .header-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+@media (width >= 64rem /* 1024px */) {
+  .header-container {
+    grid-template-columns: 1fr 2fr;
   }
 }
