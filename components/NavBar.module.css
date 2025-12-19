@@ -1,3 +1,48 @@
+.navBar {
+  background: white;
+  height: 10rem;
+  width: 100%;
+
+  outline: 1px solid gray;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  height: 100%;
+  max-width: 1200px;
+  margin: auto;
+  outline: 1px solid red;
+}
+
+.navHeader {
+  outline: 1px solid red;
+}
+
+.navLogo {
+  width: 100px;
+  height: 100px;
+}
+
+.navHam {
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  list-style-type: none;
+}
+
 .navItem {
   color: blue;
+
+  cursor: pointer;
+}
+
+.navItem:hover {
+  color: red;
 }
