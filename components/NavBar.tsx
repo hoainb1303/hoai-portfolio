@@ -15,7 +15,7 @@ const NavBar = () => {
         </div>
         <ul className={styles.navLinks}>
           <li className={styles.navItem}>
-            <ScrollLink to="home" smooth="true">
+            <ScrollLink to="hero" smooth="true">
               HOME
             </ScrollLink>
           </li>
