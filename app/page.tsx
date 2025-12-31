@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <>
       <section id="hero" className={styles.homeSection}>
-        <div className={styles.container}>HERO</div>
+        <div className={styles.container}>
+          SORRY FOR BEING SLOW THIS YEAR/nILL BE BETTER NEXT YEAR
+        </div>
       </section>
       <section id="skills" className={styles.homeSection}>
         <div className={styles.container}>SKILLS</div>
