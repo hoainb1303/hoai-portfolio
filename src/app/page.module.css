@@ -4,6 +4,8 @@
   font-size: 3rem;
 
   padding: var(--spacing-8);
+
+  background: var(--bg);
 }
 
 .container {

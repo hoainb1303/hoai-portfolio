@@ -8,7 +8,7 @@ import styles from "./NavBar.module.css";
 const NavBar = () => {
   return (
     <nav className={`${styles.navBar}`}>
-      <div className={styles.container}>
+      <div className={styles.navBarContent}>
         <div className={styles.navHeader}>
           <div className={styles.navLogo}></div>
           <div className={styles.navHam}></div>
@@ -30,13 +30,13 @@ const NavBar = () => {
             </ScrollLink>
           </li>
           <li className={styles.navItem}>
-            <ScrollLink to="about" smooth="true">
-              ABOUT
+            <ScrollLink to="BLOGS" smooth="true">
+              BLOGS
             </ScrollLink>
           </li>
           <li className={styles.navItem}>
-            <ScrollLink to="contact" smooth="true">
-              CONTACT
+            <ScrollLink to="about" smooth="true">
+              ABOUT
             </ScrollLink>
           </li>
         </ul>
