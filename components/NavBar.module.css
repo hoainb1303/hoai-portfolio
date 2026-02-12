@@ -44,7 +44,7 @@
   padding: var(--spacing-4) var(--spacing-6);
 
   border-radius: 10rem;
-  color: var(--text);
+  color: var(--gray-400);
 
   background: white;
   box-shadow: var(--shadow-s);
@@ -56,27 +56,30 @@
   transition: 0.2s ease;
 }
 
+.navItem:hover {
+  color: var(--gray-900);
+}
+
 .navItem::after {
   position: absolute;
-  inset: 0;
-
-  background: linear-gradient(90deg, var(--sky-300), var(--purple-400));
-  border-radius: 10rem;
-
-  opacity: 0;
   content: "";
 
-  transition: 0.4s ease;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+
+  top: 50%;
+  left: 0;
+
+  background: red;
+
+  opacity: 0;
+  scale: 0.2;
+  transform: translate(-50%, -50%);
+  transition: 1s ease;
 }
 
-.navItem:hover {
-  background: linear-gradient(90deg, var(--sky-300), var(--purple-400));
-  box-shadow: var(--shadow-l);
-
-  color: var(--gray-50);
-  font-weight: 900;
-}
-
-.navItem::after:hover {
+.navItem:hover::after {
   opacity: 1;
+  scale: 1;
 }
