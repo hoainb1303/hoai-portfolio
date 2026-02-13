@@ -1,14 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+import Hero from "../../components/Hero";
+
 export default function Home() {
   return (
     <>
-      <section className={styles.homeSection}>
-        <div className={styles.container}>
-          IM BACK <br /> START FROM TODAY
-        </div>
-      </section>
+      <Hero></Hero>
       <section id="skills" className={styles.homeSection}>
         <div className={styles.container}>SKILLS</div>
       </section>

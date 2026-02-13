@@ -41,23 +41,21 @@
 .navItem {
   position: relative;
 
-  padding: var(--spacing-4) var(--spacing-6);
-
-  border-radius: 10rem;
   color: var(--gray-400);
 
-  background: white;
-  box-shadow: var(--shadow-s);
-
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 500;
 
   cursor: pointer;
   transition: 0.2s ease;
+
+  /* outline: 1px solid red; */
 }
 
 .navItem:hover {
   color: var(--gray-900);
+
+  font-weight: 900;
 }
 
 .navItem::after {
@@ -71,15 +69,12 @@
   top: 50%;
   left: 0;
 
-  background: red;
+  background: var(--indigo-500);
 
-  opacity: 0;
-  scale: 0.2;
-  transform: translate(-50%, -50%);
-  transition: 1s ease;
+  transform: translate(-150%, -50%) scale(0);
+  transition: 0.2s ease;
 }
 
 .navItem:hover::after {
-  opacity: 1;
-  scale: 1;
+  transform: translate(-150%, -50%) scale(1);
 }
