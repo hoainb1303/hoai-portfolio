@@ -1,0 +1,35 @@
+.hero {
+  position: flex;
+  margin: auto;
+  padding: 2rem 0;
+
+  height: 20rem;
+  width: 100%;
+
+  background: var(--bg-dark);
+}
+
+.container {
+  margin: auto;
+  padding: 2rem;
+
+  height: 100%;
+  max-width: 1440px;
+  border-radius: 1rem;
+
+  background: var(--bg);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  border-radius: 1rem;
+
+  background: var(--bg-light);
+  color: var(--text);
+
+  box-shadow: var(--shadow-s);
+}

@@ -5,7 +5,7 @@
 
   padding: var(--spacing-8);
 
-  background: var(--bg);
+  background: var(--bg-dark);
 }
 
 .container {
@@ -17,7 +17,7 @@
   height: 100%;
   max-width: 1440px;
 
-  background: var(--bg);
+  background: var(--bg-dark);
 
   border-radius: var(--spacing-8);
 }

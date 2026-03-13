@@ -3,7 +3,6 @@
   width: 100%;
 
   background: var(--bg);
-  outline: 1px solid black;
 }
 
 .navBarContent {
@@ -25,6 +24,7 @@
 .navLogo {
   width: 100px;
   height: 100px;
+  outline: 1px solid red;
 }
 
 .navHam {
@@ -35,25 +35,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   list-style-type: none;
 }
 
 .navItem {
   position: relative;
 
-  color: var(--gray-400);
+  color: var(--text-muted);
 
   font-size: 1.3rem;
   font-weight: 500;
 
   cursor: pointer;
   transition: 0.2s ease;
-
-  /* outline: 1px solid red; */
 }
 
 .navItem:hover {
-  color: var(--gray-900);
+  color: var(--text);
 
   font-weight: 900;
 }
@@ -61,15 +60,14 @@
 .navItem::after {
   position: absolute;
   content: "";
+  top: 50%;
+  left: 0;
 
   width: 1rem;
   height: 1rem;
   border-radius: 100%;
 
-  top: 50%;
-  left: 0;
-
-  background: var(--indigo-500);
+  background: var(--primary);
 
   transform: translate(-150%, -50%) scale(0);
   transition: 0.2s ease;

@@ -1,12 +1,18 @@
 :root {
-  --primary: oklch(71.4% 0.15);
-  --bg: oklch(96% 0 264);
+  --primary: var(--blue-400);
+  --secondary: var(--yellow-400);
 
-  --bg-white: oklch(100% 0 255);
+  --bg-dark: oklch(0.92 0 251);
+  --bg: oklch(0.96 0 251);
+  --bg-light: oklch(1 0 251);
 
-  /* text-colors */
-  --text: oklch(0.15 0 264);
-  --text-muted: oklch(0.4 0 264);
+  --text: oklch(0.15 0 254);
+  --text-muted: oklch(0.4 0 254);
+
+  --highlight: oklch(1 0 254);
+  --border: oklch(0.6 0 254);
+  --border-muted: oklch(0.7 0 254);
+
   /* shadows */
   --shadow-s:
     inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
@@ -29,7 +35,6 @@
   --spacing-8: 2rem; /* 32 */
   --spacing-9: 2rem; /* 36 */
   --spacing-10: 2.5rem; /* 40 */
-  /* Tailwind 3.0 copy color palette */
 
   /* slate */
   --slate-50: #f8fafc;
@@ -296,6 +301,18 @@
   --rose-900: #881337;
 }
 
+body.dark {
+  --bg-dark: oklch(0.05 0 251);
+  --bg: oklch(0.15 0 251);
+  --bg-light: oklch(0.2 0 251);
+
+  --text: oklch(0.96 0 254);
+  --text-muted: oklch(0.76 0 254);
+  --highlight: oklch(0.5 0 254);
+  --border: oklch(0.4 0 254);
+  --border-muted: oklch(0.3 0 254);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -303,6 +320,8 @@ html {
 body {
   font-family: var(--font-lato), Arial, Helvetica, sans-serif;
   text-wrap: ballance;
+
+  background: var(--bg-dark);
 }
 
 * {
