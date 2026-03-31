@@ -1,13 +1,19 @@
-.viewport {
-  overflow: hidden;
+.works {
+  margin: auto;
+  padding: 0 0 var(--spacing-8) 0;
+
+  width: 100%;
+
+  background: var(--bg-dark);
 }
 
-.container {
-  display: flex;
-  touch-action: pan-y pinch-zoom;
-}
+.worksContainer {
+  margin: auto;
 
-.slide {
-  flex: 0 0 100%;
-  min-width: 0;
+  max-width: 1440px;
+  border-radius: 1rem;
+
+  padding: var(--spacing-8);
+
+  background: var(--bg);
 }

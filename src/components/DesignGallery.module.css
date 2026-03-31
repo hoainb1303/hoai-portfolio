@@ -1,0 +1,35 @@
+.designGallery {
+  overflow: hidden;
+}
+
+.galleryContainer {
+  display: flex;
+
+  scrollbar-width: none;
+}
+
+.galleryItem {
+  flex: 0 0 30%;
+  margin-right: 2rem;
+
+  min-width: 0;
+  max-width: 20rem;
+  aspect-ratio: 4/3;
+
+  border: 1px solid var(--border-muted);
+  border-radius: 1rem;
+  box-sizing: border-box;
+
+  color: var(--text);
+
+  overflow: hidden;
+}
+
+.itemImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
