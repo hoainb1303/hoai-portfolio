@@ -1,12 +1,17 @@
 "use client";
+import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import styles from "./DesignGallery.module.css";
 
 const DesignGallery = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    containScroll: false,
-    loop: true,
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      containScroll: false,
+      loop: true,
+    },
+    [Autoplay({ delay: 3000, playOnInit: true })],
+  );
 
   const goToPrev = () => emblaApi?.scrollPrev();
   const goToNext = () => emblaApi?.scrollNext();
@@ -20,6 +25,14 @@ const DesignGallery = () => {
             <div className={`${styles.itemImage}`}>{index + 1}</div>
           </div>
         ))}
+      </div>
+      <div className={`${styles.navigationContainer}`}>
+        <button onClick={goToPrev} className={`${styles.prevButton}`}>
+          Prev
+        </button>
+        <button onClick={goToNext} className={`${styles.nextButton}`}>
+          Next
+        </button>
       </div>
     </div>
   );

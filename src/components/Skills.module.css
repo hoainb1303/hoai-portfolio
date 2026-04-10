@@ -22,13 +22,10 @@
   background: var(--bg);
 }
 
+/* SKILLS LIST */
 .skillList {
   display: grid;
-
   gap: var(--spacing-6) var(--spacing-8);
-}
-
-@media (hover: hover) {
 }
 
 .skillItem {
@@ -63,4 +60,22 @@
   color: var(--text);
 
   transition: 1s ease;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .skillList {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 0;
+  }
+
+  .skillItem {
+    height: 5rem;
+    aspect-ratio: 1/1;
+  }
 }

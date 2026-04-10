@@ -8,8 +8,9 @@ import styles from "./NavBar.module.css";
 
 const NavBar = () => {
   const [themeToggle, setThemeToggle] = useState(false);
+  const [menuToggle, setMenuToggle] = useState(false);
 
-  const toggleTheme = (): void => {
+  const toggleTheme = () => {
     if (themeToggle) {
       setThemeToggle(false);
       document.body.classList.remove("dark");
@@ -19,6 +20,10 @@ const NavBar = () => {
       document.body.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }
+  };
+
+  const toggleMenu = () => {
+    setMenuToggle(!menuToggle);
   };
 
   useEffect(() => {
@@ -37,9 +42,11 @@ const NavBar = () => {
           <div className={styles.navLogo} onClick={toggleTheme}>
             {`${themeToggle}`}
           </div>
-          <div className={styles.navHam}></div>
+          <div className={styles.navHam} onClick={toggleMenu}></div>
         </div>
-        <ul className={styles.navLinks}>
+        <ul
+          className={`${styles.navLinks} ${menuToggle ? styles.menuOn : styles.menuOff}`}
+        >
           {navigations.map((navigation) => {
             return (
               <li key={navigation.id} className={styles.navItem}>

@@ -1,8 +1,8 @@
 import DesignGallery from "./DesignGallery";
 
-import styles from "./Works.module.css";
+import styles from "./Design.module.css";
 
-const Works = () => {
+const Design = () => {
   return (
     <section id="works" className={`${styles.works}`}>
       <div className={`${styles.worksContainer}`}>
@@ -13,4 +13,4 @@ const Works = () => {
   );
 };
 
-export default Works;
+export default Design;
