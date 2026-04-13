@@ -9,10 +9,10 @@ import PrintProject from "../components/PrintProject";
 export default function Home() {
   return (
     <>
-      {/* <Hero></Hero>
+      <Hero></Hero>
       <Skills></Skills>
       <Design></Design>
-      <PrintProject></PrintProject> */}
+      <PrintProject></PrintProject>
       <section id="blogs" className={styles.homeSection}>
         <div className={styles.container}>BLOGS</div>
       </section>

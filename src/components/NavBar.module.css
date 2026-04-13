@@ -1,13 +1,16 @@
 .navBar {
+  position: sticky;
+  top: 0;
+
   width: 100%;
-  background: var(--bg);
+  background: var(--bg-glass);
+  backdrop-filter: blur(5px);
+  box-shadow: var(--shadow-s);
 }
 
 .navBarContent {
-  display: grid;
-  grid-template-columns: 1fr;
-
   position: relative;
+  display: grid;
   max-width: 90rem;
   margin: auto;
 
@@ -21,34 +24,80 @@
 }
 
 .navLogo {
+  display: grid;
   height: 3rem;
   aspect-ratio: 1/1;
-  outline: 1px solid red;
+  z-index: 1;
+}
+
+.navLogo svg {
+  height: 100%;
   color: var(--text);
 }
 
 .navHam {
-  height: 100%;
+  display: grid;
+  height: 3rem;
   aspect-ratio: 1/1;
+  border-radius: 100%;
 
-  background: red;
-  outline: 1px solid red;
+  background: var(--bg-light);
+  box-shadow: var(--shadow-s);
+
+  z-index: 1;
+}
+
+.navHam svg {
+  grid-area: 1/1;
+  margin: auto;
+  height: 60%;
+  color: var(--text);
 }
 
 .navLinks {
   position: absolute;
-  top: 100%;
+  top: -1vh;
+  left: -15rem;
 
-  display: grid;
-  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 15rem;
+  height: 101vh;
+
+  background: var(--bg);
+  box-shadow: var(--shadow-l);
+
+  padding-top: 10rem;
 }
-/* .navLinks {
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
+
+.navBackground {
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+  background: oklch(0.05 0 251 / 0.8);
+
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navItem {
+  padding-left: 1.5rem;
+  opacity: 0;
+}
+
+.active::after {
+  position: absolute;
+  margin-left: 1rem;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background: var(--primary);
+}
+
+/* .navItem {
   position: relative;
 
   color: var(--text-muted);
@@ -87,24 +136,17 @@
 } */
 
 @media (min-width: 768px) {
-  .navBar {
-  }
-
-  .navLogo {
+  .navLinks {
   }
 }
 
 @media (min-width: 1024px) {
-  .navBar {
-  }
-
   .navBarContent {
     display: flex;
     justify-content: space-between;
   }
 
   .navLogo {
-    height: 5rem;
   }
 
   .navHam {
@@ -117,11 +159,5 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .menuOn {
-  }
-
-  .menuOff {
-    display: none;
-  }
+@media (max-width: 1023px) {
 }

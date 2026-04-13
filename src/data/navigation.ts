@@ -1,6 +1,6 @@
 import type { Navigation } from "../types/navigation";
 
-export const navigations: Navigation[] = [
+export const navItems: Navigation[] = [
   {
     title: "HOME",
     id: "hero",
