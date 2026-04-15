@@ -62,6 +62,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-top: 10rem;
 
   width: 15rem;
   height: 101vh;
@@ -69,7 +70,7 @@
   background: var(--bg);
   box-shadow: var(--shadow-l);
 
-  padding-top: 10rem;
+  list-style: none;
 }
 
 .navBackground {
@@ -88,53 +89,6 @@
   opacity: 0;
 }
 
-.active::after {
-  position: absolute;
-  margin-left: 1rem;
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  background: var(--primary);
-}
-
-/* .navItem {
-  position: relative;
-
-  color: var(--text-muted);
-
-  font-size: 1.3rem;
-  font-weight: 500;
-
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.navItem:hover {
-  color: var(--text);
-
-  font-weight: 900;
-}
-
-.navItem::after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 0;
-
-  width: 1rem;
-  height: 1rem;
-  border-radius: 100%;
-
-  background: var(--primary);
-
-  transform: translate(-150%, -50%) scale(0);
-  transition: 0.2s ease;
-}
-
-.navItem:hover::after {
-  transform: translate(-150%, -50%) scale(1);
-} */
-
 @media (min-width: 768px) {
   .navLinks {
   }
@@ -147,6 +101,7 @@
   }
 
   .navLogo {
+    height: 5rem;
   }
 
   .navHam {
@@ -154,8 +109,59 @@
   }
 
   .navLinks {
+    position: static;
+
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+
+    height: auto;
     width: 40rem;
+
+    background: none;
+    box-shadow: none;
+  }
+
+  .navBackground {
+    display: none;
+  }
+
+  .navItem {
+    position: relative;
+
+    padding: 0;
+
+    color: var(--text-muted);
+
+    font-size: 1.3rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    opacity: 1;
+  }
+
+  .navItem::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+
+    background: var(--primary);
+
+    transform: translate(-150%, -50%) scale(0);
+    transition: 0.2s ease;
+  }
+
+  .navItem:hover::after {
+    transform: translate(-150%, -50%) scale(1);
   }
 }
 

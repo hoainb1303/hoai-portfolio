@@ -9,8 +9,6 @@ import styles from "./NavBar.module.css";
 import { logoSvg, menuSvg, backSvg } from "@/assets";
 
 const NavBar = () => {
-  const timeline = gsap.timeline();
-
   const [themeToggle, setThemeToggle] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") === "dark" ? true : false;
