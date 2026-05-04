@@ -1,12 +1,17 @@
 "use client";
+import { RefObject, useRef } from "react";
 import styles from "./Hero.module.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-gsap.registerPlugin(MotionPathPlugin);
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(MotionPathPlugin, SplitText);
 
 const Hero = () => {
+  const heroTextRef = useRef(null);
+
   useGSAP(() => {
+    HeroTextAnimation(heroTextRef);
     SkillRotation();
   }, []);
 
@@ -14,8 +19,15 @@ const Hero = () => {
     <section className={`${styles.hero}`}>
       <div className={`${styles.heroContent}`}>
         <div className={`$styles.heroLeft}`}>
-          <div className={`${styles.heroText}`}>
-            <p>Hi! My name is Hoai.</p>
+          <div ref={heroTextRef} className={`${styles.heroText}`}>
+            <h3>Hey! I&apos;m Hoai Nguyen.</h3>
+            <h1>A UX/UI Designer</h1>
+            <h1>Front-end Developer</h1>
+            <p>
+              I enjoy building clean, user-friendly web application, creating
+              simple but smart and practical solutions, supported by a strong
+              foundation in system thinking.
+            </p>
           </div>
         </div>
         <div className={`${styles.heroRight}`}>
@@ -45,6 +57,17 @@ const Hero = () => {
 };
 
 export default Hero;
+
+const HeroTextAnimation = (ref: RefObject<null>) => {
+  const split = SplitText.create(ref.current, { type: "words" });
+  gsap.from(split.words, {
+    x: 150,
+    opacity: 0,
+    duration: 0.7,
+    ease: "power4",
+    stagger: 0.04,
+  });
+};
 
 const SkillRotation = () => {
   const duration = 6;
@@ -82,7 +105,9 @@ const SkillRotation = () => {
       duration: duration / 2,
       delay: (duration / 3) * (i - 1),
       ease: "power2.in",
-      onComplete: Looping,
+      onComplete: () => {
+        Looping();
+      },
     });
 
     // Hover
