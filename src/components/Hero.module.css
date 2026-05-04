@@ -10,9 +10,10 @@
 }
 
 .heroContent {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
+  justify-items: center;
 
   margin: auto;
   padding: 2rem;
@@ -23,22 +24,80 @@
 }
 
 .heroImage {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 10rem;
-  width: 10rem;
-  border-radius: 1rem;
-
+  height: var(--image-circle-s);
+  aspect-ratio: 1/1;
+  border-radius: 100%;
   background: var(--bg);
 }
 
+.heroSkill {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: var(--skill-circle-s);
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+
+  background: var(--bg);
+  box-shadow: var(--shadow-s);
+
+  scale: 0;
+
+  cursor: pointer;
+}
+
+.heroSkill p {
+  color: red;
+}
+
+.heroSvgPath {
+  position: absolute;
+  fill: none;
+}
+
 @media (min-width: 768px) {
+  .heroImage {
+    height: var(--image-circle-m);
+  }
+
+  .heroSkill {
+    height: var(--skill-circle-m);
+  }
 }
 
 @media (min-width: 1024px) {
   .hero {
     height: calc(100vh - 7rem);
   }
+
+  .heroContent {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .heroImage {
+    height: var(--image-circle-l);
+  }
+
+  .heroSkill {
+    height: var(--skill-circle-l);
+  }
+}
+
+:root {
+  --image-circle-s: 15rem;
+  --image-circle-m: 20rem;
+  --image-circle-l: 25rem;
+
+  --skill-circle-s: 5rem;
+  --skill-circle-m: 7rem;
+  --skill-circle-l: 7rem;
 }

@@ -6,6 +6,8 @@
   background: var(--bg-glass);
   backdrop-filter: blur(5px);
   box-shadow: var(--shadow-s);
+
+  z-index: 999999;
 }
 
 .navBarContent {
@@ -55,7 +57,7 @@
 }
 
 .navLinks {
-  position: absolute;
+  position: fixed;
   top: -1vh;
   left: -15rem;
 
@@ -81,7 +83,6 @@
   background: oklch(0.05 0 251 / 0.8);
 
   opacity: 0;
-  pointer-events: none;
 }
 
 .navItem {

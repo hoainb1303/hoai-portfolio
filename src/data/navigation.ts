@@ -1,4 +1,8 @@
-import type { Navigation } from "../types/navigation";
+interface Navigation {
+  title: string;
+  id: string;
+  href: string;
+}
 
 export const navItems: Navigation[] = [
   {

@@ -1,4 +1,10 @@
-import type { Skill } from "../types/skill";
+interface Skill {
+  id: number;
+  name: string;
+  description: string;
+  photo: string;
+  icons?: string[];
+}
 
 export const skills: Skill[] = [
   {
