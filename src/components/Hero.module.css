@@ -1,9 +1,9 @@
 .hero {
   position: flex;
   margin: auto;
-  padding: 2rem 0;
+  padding: var(--spacing-8) 0;
 
-  height: calc(100vh - 5rem);
+  height: 40rem;
   width: 100%;
 
   background: var(--bg-dark);
@@ -12,7 +12,6 @@
 .heroContent {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  align-items: center;
   justify-items: center;
 
   margin: auto;
@@ -68,6 +67,10 @@
 }
 
 @media (min-width: 768px) {
+  .hero {
+    height: 50rem;
+  }
+
   .heroImage {
     height: var(--image-circle-m);
   }
@@ -79,12 +82,14 @@
 
 @media (min-width: 1024px) {
   .hero {
-    height: calc(100vh - 7rem);
+    height: 60rem;
   }
 
   .heroContent {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 20rem;
   }
 
   .heroImage {
@@ -99,7 +104,7 @@
 :root {
   --image-circle-s: 15rem;
   --image-circle-m: 20rem;
-  --image-circle-l: 25rem;
+  --image-circle-l: 30rem;
 
   --skill-circle-s: 5rem;
   --skill-circle-m: 7rem;

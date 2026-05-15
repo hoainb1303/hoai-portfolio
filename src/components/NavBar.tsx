@@ -117,6 +117,7 @@ const MenuOpenAnimation = () => {
     duration: 0.5,
     ease: "power4.out",
     opacity: 1,
+    pointerEvents: "auto",
   });
 
   gsap.fromTo(
@@ -161,5 +162,6 @@ const MenuCloseAnimation = () => {
     duration: 0.5,
     ease: "power4.in",
     opacity: 0,
+    pointerEvents: "none",
   });
 };

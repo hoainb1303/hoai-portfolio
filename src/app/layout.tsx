@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${firaSans.variable} ${lato.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${firaSans.variable} ${lato.variable} blue`}
       >
         <NavBar />
         <main>{children}</main>

@@ -1,8 +1,4 @@
-interface Navigation {
-  title: string;
-  id: string;
-  href: string;
-}
+import { Navigation } from "../types";
 
 export const navItems: Navigation[] = [
   {
