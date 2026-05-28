@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselButtons";
+
+import { useCarouselSelect } from "./CarouselSelect";
 
 import styles from "./Carousel.module.css";
 
@@ -16,17 +18,33 @@ const Carousel = () => {
     [Autoplay({ delay: 3000, playOnInit: true })],
   );
 
-  const [imageTarget, setImageTarget] = useState<number>(0);
+  const [imageTarget, setImageTarget] = useState(0);
 
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
+  const { selectedIndex, scrollSnaps, selectItem } =
+    useCarouselSelect(emblaApi);
+
   const images: number[] = Array.from(Array(10).keys());
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setImageTarget(emblaApi?.selectedScrollSnap());
+    };
+
+    onSelect();
+
+    emblaApi?.on("select", onSelect);
+    return () => {
+      emblaApi?.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   return (
     <div className={styles.carousel}>
-      <div className={styles.carouselFocus}>
-        {emblaApi?.selectedScrollSnap()}
-      </div>
+      <div className={styles.carouselFocus}>{images[selectedIndex]}</div>
       <div className={styles.carouselViewPort} ref={emblaRef}>
         <div className={styles.photoList}>
           {images.map((index) => (

@@ -3,8 +3,6 @@
   padding: 0 0 var(--spacing-8) 0;
 
   width: 100%;
-
-  background: var(--bg-dark);
 }
 
 .sectionContent {
@@ -36,7 +34,7 @@
 .skillsetList {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--spacing-10);
 }
 
 @media (min-width: 768px) {

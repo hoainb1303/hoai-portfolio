@@ -1,12 +1,12 @@
 .carousel {
-  --slide-height: 19rem;
   --slide-spacing: 1rem;
-  --slide-size: 70%;
-  overflow: hidden;
+  --slide-size: 10rem;
+
+  display: grid;
+  gap: var(--spacing-4);
 }
 
 .carouselViewPort {
-  overflow: hidden;
 }
 
 .photoList {
@@ -18,18 +18,37 @@
 .photoItem {
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
+  aspect-ratio: 4/3;
   min-width: 0;
   padding-left: var(--slide-spacing);
 }
 
 .photoItemContent {
-  border: 0.2rem solid black;
-  border-radius: 1.8rem;
-  font-size: 4rem;
-  font-weight: 600;
+  height: 100%;
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--slide-height);
   user-select: none;
+
+  background: var(--primary);
+  border-radius: 1rem;
+
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .photoList {
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+    --slide-spacing: 1rem;
+    --slide-size: 10rem;
+    overflow: hidden;
+  }
 }
